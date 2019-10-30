@@ -37,7 +37,6 @@ export class PluginApiContribution implements BackendApplicationContribution {
 
         if (!this.devMode) {
             const webviewApp = connect();
-            // TODO load bundled by webpack?
             webviewApp.use(serveStatic(path.join(__dirname, '../../../src/main/browser/webview/pre')));
             // TODO parametrize webview endpoint
             app.use(vhost('*.webview.*', webviewApp));
